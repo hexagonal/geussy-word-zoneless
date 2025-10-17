@@ -1,0 +1,18 @@
+.letter {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.75rem;
+  height: 2.75rem;
+  border-radius: 0.375rem;
+  font-size: 1rem;
+  font-weight: 600;
+
+  &.incorrect {
+    background-color: red;
+  }
+
+  &.correct {
+    background-color: green;
+  }
+}

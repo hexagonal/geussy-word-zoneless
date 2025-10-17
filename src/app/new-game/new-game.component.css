@@ -1,0 +1,17 @@
+:host {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.new-game-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 3.15rem;
+  height: 3.15rem;
+  padding: 0.25rem;
+  border-radius: 50%;
+  font-size: 1.8rem;
+  font-weight: 600;
+}

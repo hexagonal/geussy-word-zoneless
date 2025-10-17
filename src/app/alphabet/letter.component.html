@@ -1,0 +1,10 @@
+<button
+  type="button"
+  class="letter"
+  [class.ready]='state() === "ready"'
+  [class.incorrect]='state() === "incorrect"'
+  [class.correct]='state() === "correct"'
+  (click)="guess()"
+>
+  {{ letter() }}
+</button>

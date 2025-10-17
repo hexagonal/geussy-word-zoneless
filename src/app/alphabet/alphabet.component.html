@@ -1,0 +1,12 @@
+<section class="alphabet">
+  <!-- A to Y -->
+  @for (letter of alphabet.slice(0, 25); track letter) {
+    <letter [letter]="letter"></letter>
+  }
+  <!-- Four blanks -->
+  @for (i of [1, 2, 3, 4]; track i) {
+    <span class="placeholder" aria-hidden="true"></span>
+  }
+  <!-- Z -->
+<letter [letter]="'Z'"></letter>
+</section>

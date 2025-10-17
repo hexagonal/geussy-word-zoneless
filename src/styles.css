@@ -1,1 +1,28 @@
+/* Global Pico CSS import */
+@import '@picocss/pico/css/pico.min.css';
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700&display=swap');
+
 /* You can add global styles to this file, and also import other style files */
+
+.main-content {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  align-items: center;
+}
+
+:root {
+  --pico-font-family-sans-serif: 'Orbitron', sans-serif;
+  --pico-font-family: 'Orbitron', sans-serif;
+}
+
+body {
+  font-family: 'Orbitron', sans-serif;
+}
+
+.title {
+  text-transform: uppercase;
+  text-align: center;
+  margin: 0;
+  font-weight: 700;
+}
