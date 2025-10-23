@@ -20,6 +20,6 @@ describe('App', () => {
     const fixture = TestBed.createComponent(App);
     fixture.detectChanges();
     const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('solution')).not.toBeNull();
+    expect(compiled.querySelector('gw-solution')).not.toBeNull();
   });
 });

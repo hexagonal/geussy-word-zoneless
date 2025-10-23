@@ -1,23 +1,23 @@
 import { Component, inject, OnInit } from '@angular/core';
-import { AlphabetComponent } from './alphabet/alphabet.component';
-import { NewGameComponent } from './new-game/new-game.component';
-import { SolutionComponent } from './solution/solution.component';
-import { GameService } from './game.service';
+import { Guesses } from './guesses/guesses';
+import { NewGame } from './new-game/new-game';
+import { Solution } from './solution/solution';
+import { Game } from './game';
 
 @Component({
-  selector: 'app-root',
+  selector: 'gw-app',
   imports: [
-    SolutionComponent,
-    AlphabetComponent,
-    NewGameComponent
+    Solution,
+    Guesses,
+    NewGame
   ],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
 export class App implements OnInit {
-  #gameService = inject(GameService);
+  #game = inject(Game);
 
   async ngOnInit() {
-    await this.#gameService.newGame();
+    await this.#game.new();
   }
 }

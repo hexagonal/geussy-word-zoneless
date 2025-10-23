@@ -5,8 +5,8 @@ import { load, save } from './util/storage';
 @Injectable({
   providedIn: 'root'
 })
-export class GameRepoService {
-readonly #words: string[] = [
+export class GameStore {
+  readonly #words: string[] = [
     'ACTION',
     'ACTIVE',
     'ACTUAL',
@@ -209,10 +209,10 @@ readonly #words: string[] = [
     'YELLOW',
   ] as const;
 
-#shuffledWords : string[] = [];
+  #shuffledWords: string[] = [];
 
-  #seed : number | null = null;
-  #index : number | null = null;
+  #seed: number | null = null;
+  #index: number | null = null;
 
   getWord(): Promise<string> {
     if (this.#shuffledWords.length === 0) {

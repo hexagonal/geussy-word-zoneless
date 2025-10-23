@@ -1,16 +1,16 @@
 import { Component, inject, input, linkedSignal } from '@angular/core';
-import { GameService, Letter } from '../game.service';
+import { Game, Letter } from '../game';
 
 export type State = 'ready' | 'incorrect' | 'correct';
 
 @Component({
-  selector: 'letter',
-  templateUrl: './letter.component.html',
-  styleUrl: './letter.component.css'
+  selector: 'gw-guess',
+  templateUrl: './guess.html',
+  styleUrl: './guess.css'
 })
-export class LetterComponent {
-  #gameService = inject(GameService);
-  readonly #word = this.#gameService.word;
+export class Guess {
+  #game = inject(Game);
+  readonly #word = this.#game.word;
 
   readonly letter = input.required<Letter>();
 
@@ -20,7 +20,7 @@ export class LetterComponent {
   });
 
   guess() {
-    let isCorrect = this.#gameService.guess(this.letter());
+    let isCorrect = this.#game.guess(this.letter());
     this.state.set(isCorrect ? 'correct' : 'incorrect');
   }
 }

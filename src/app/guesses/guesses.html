@@ -1,12 +1,12 @@
-<section class="alphabet">
+<section class="guesses">
   <!-- A to Y -->
   @for (letter of alphabet.slice(0, 25); track letter) {
-    <letter [letter]="letter"></letter>
+    <gw-guess [letter]="letter"></gw-guess>
   }
   <!-- Four blanks -->
   @for (i of [1, 2, 3, 4]; track i) {
     <span class="placeholder" aria-hidden="true"></span>
   }
   <!-- Z -->
-<letter [letter]="'Z'"></letter>
+  <gw-guess [letter]="'Z'"></gw-guess>
 </section>

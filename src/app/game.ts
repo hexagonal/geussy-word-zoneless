@@ -1,5 +1,5 @@
 import { Injectable, inject, linkedSignal, signal } from '@angular/core';
-import { GameRepoService } from './game-repo.service';
+import { GameStore } from './game-store';
 
 export type Letter =
   'A' | 'B' | 'C' | 'D' | 'E' | 'F' |
@@ -11,8 +11,8 @@ export type Letter =
 @Injectable({
   providedIn: 'root'
 })
-export class GameService {
-  #repo = inject(GameRepoService);
+export class Game {
+  #store = inject(GameStore);
   #word = signal<string>("QWERTY");
   readonly word = this.#word.asReadonly();
 
@@ -23,8 +23,9 @@ export class GameService {
   
   readonly solution = this.#solution.asReadonly();
 
-  async newGame() {
-    const word = await this.#repo.getWord();
+  /** Become a new game. */
+  async new() {
+    const word = await this.#store.getWord();
     this.#word.set(word);
   }
 
